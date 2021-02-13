@@ -1,41 +1,40 @@
-DROP DATABASE IF EXISTS employeeDB;
+DROP DATABASE IF EXISTS staffDB;
 
-CREATE DATABASE employeeDB;
+CREATE DATABASE staffDB;
 
-USE employeeDB;
+USE staffDB;
 
-CREATE TABLE department (
+CREATE TABLE departments (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(30) NOT NULL,
-   PRIMARY KEY (id)
+  PRIMARY KEY (id)
 );
 
-CREATE TABLE role (
+CREATE TABLE roles (
   id INT NOT NULL AUTO_INCREMENT,
   title VARCHAR(30) NOT NULL,
-  salary DECIMAL(10, 2) NOT NULL,
+  salary DECIMAL(10, 2),
   department_id INT,
   PRIMARY KEY (id),
-  FOREIGN KEY (department_id) REFERENCES department(id)
+  FOREIGN KEY (department_id) REFERENCES departments(id)
 );
 
-CREATE TABLE employee (
+CREATE TABLE employees (
   id INT NOT NULL AUTO_INCREMENT,
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
   role_id INT,
   manager_id INT,
   PRIMARY KEY (id),
-  FOREIGN KEY (role_id) REFERENCES role(id),
-  FOREIGN KEY (manager_id) REFERENCES employee(id)
+  FOREIGN KEY (role_id) REFERENCES roles(id),
+  FOREIGN KEY (manager_id) REFERENCES employees(id)
 );
 
-INSERT INTO department (name)
+INSERT INTO departments (name)
 VALUES ("department_name_test");
 
-INSERT INTO role (title, salary, department_id)
-VALUES ("test_role_title", 1000000, 1);
+INSERT INTO roles (title, salary, department_id)
+VALUES ("test_role_title", "1000000", 1);
 
-USE employeeDB;
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("test_first_name", "test_last_name", 1, 1);
+INSERT INTO employees (first_name, last_name, role_id)
+VALUES ("test_first_name", "test_last_name", 1);
