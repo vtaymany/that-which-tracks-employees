@@ -1,7 +1,7 @@
 const mysql = require('mysql')
 const inquirer = require('inquirer')
 const consoleTable = require('console.table')
-let roleArr = []
+const roleArr = []
 
 function addDepartment() {
   inquirer
@@ -106,6 +106,7 @@ function viewAllEmployees() {
 }
 
 function selectRole() {
+  roleArr.length = 0
   connection.query('SELECT * FROM roles', function (err, res) {
     if (err) throw err
     for (var i = 0; i < res.length; i++) {
@@ -145,10 +146,8 @@ function updateEmployee() {
           },
         ])
         .then(function (res) {
-          console.log('the role is' + res.role)
-          console.log(roleArr)
-          var roleID = selectRole().indexOf(res.role) + 1
-          console.log('this is the' + roleID)
+          console.log('hello world' + roleArr)
+          var roleID = roleArr.indexOf(res.role) + 1
           connection.query(
             'UPDATE employees SET role_id="' +
               roleID +
