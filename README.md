@@ -32,7 +32,7 @@ npm start
 
 **Screen capture demonstrating application functionality**
 
-![team.html](./public/assets/screen-captures/application_functionality.mp4 'Taker of notes screen capture')
+![Application Functionality](./public/assets/screen-captures/application_functionality.mp4 'Taker of notes screen capture')
 
 ## Credits
 
