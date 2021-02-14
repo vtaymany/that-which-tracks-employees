@@ -203,8 +203,8 @@ function initialize() {
         ],
       },
     ])
-    .then(function (val) {
-      switch (val.choice) {
+    .then(function (res) {
+      switch (res.choice) {
         case 'Add Department':
           addDepartment()
           break
