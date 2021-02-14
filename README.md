@@ -32,8 +32,7 @@ npm start
 
 **Screen capture demonstrating application functionality**
 
-<iframe src="https://drive.google.com/file/d/1kMG9vhf1gDACbDGIw8mMsQc_AjAgb4lf/preview" width="640" height="480"></iframe>
-![Application Functionality](./public/assets/screen-captures/application_functionality.mp4 'Taker of notes screen capture')
+![Application Functionality](./public/assets/screen-captures/application_functionality.gif 'Taker of notes screen capture')
 
 ## Credits
 
